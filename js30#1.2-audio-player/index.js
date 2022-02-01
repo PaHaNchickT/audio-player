@@ -21,6 +21,7 @@ let durmin = 0
 let dursec = 0
 let song = 1
 let songsNumber = 0
+let info
 
 for (let keys in songlist) {
     songsNumber = songsNumber + 1
@@ -71,8 +72,16 @@ audio.addEventListener("timeupdate", function () {
         }
     }
     document.querySelector('.duration-time').textContent = `${durmin}:${dursec}`
+    
+    //info
+    for (let keys in songlist) {
+        info = songlist[song].split('=')
+        console.log(info)
+    }
+    document.querySelector('h1').textContent = info[0]
+    document.querySelector('h2').textContent = info[1]
+    document.querySelector('.cover').style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
 });
-
 //play audio buttons
 function playAudio() {
     if (isPlay === false) {
@@ -95,7 +104,11 @@ player.addEventListener('click', playAudio);
 
 //prev and next
 
+//добавить сюда условия если isPlay равно или не равно
+
 function prevSong() {
+    // currentTime = 0
+    // range = 0
     song = song - 1
     audio.src = `assets/audio/${song}.mp3`;
     audio.play();
@@ -107,6 +120,8 @@ function prevSong() {
 }
 
 function nextSong() {
+    // currentTime = 0
+    // range = 0
     song = song + 1
     audio.src = `assets/audio/${song}.mp3`;
     audio.play();

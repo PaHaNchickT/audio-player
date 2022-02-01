@@ -54,3 +54,11 @@ body{
 .next {
     background-image: url(assets/svg/forward.png);
 }
+
+.cover {
+    width: 458px;
+    height: 369px;
+    background-size: 100%;
+    background-position: center;
+    /* background-image: url(assets/img/Eyes.jpg); */
+}
