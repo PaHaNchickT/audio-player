@@ -1,22 +1,26 @@
 const audio = new Audio();
 const player = document.querySelector('.btn-play')
 const bar = document.querySelector('.bar-progress')
-let isPlay = false
-
 const progress = document.querySelector('.range')
+const coordPlayer = player.getBoundingClientRect()
+let coordLeft
+let isPlay = false
 let range
 let currentTime
 let duration
 let time = 0
 let Xcoor
+
 audio.src = 'assets/audio/Anacondaz.mp3';
 
-isPlay = false;
+for (let keys in coordPlayer) {
+    coordLeft = coordPlayer['left']
+}
 
 audio.addEventListener("timeupdate", function () {
     progress.onmousemove = function (event) {
         progress.onclick = function () {
-            time = (event.clientX - 7) / 294 * duration
+            time = (event.clientX - coordLeft) / 294 * duration
             audio.currentTime = time
             console.log(time/duration)
         }
