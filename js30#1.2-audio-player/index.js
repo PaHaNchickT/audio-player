@@ -21,7 +21,11 @@ audio.addEventListener("timeupdate", function () {
             console.log(time/duration)
         }
     }
-    bar.style.left = `calc(${currentTime/duration*100}% - 5.5px)`
+    if (isPlay === false) {
+        bar.style.left = `calc(${time/duration*100}% - 5.5px)`
+    } else {
+        bar.style.left = `calc(${currentTime/duration*100}% - 5.5px)`
+    }
     duration = audio.duration;
     currentTime = audio.currentTime;
     range = (currentTime / duration) * 100
