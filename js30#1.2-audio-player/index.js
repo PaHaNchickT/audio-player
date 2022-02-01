@@ -10,29 +10,32 @@ let currentTime
 let duration
 let time = 0
 let Xcoor
+audio.src = 'assets/audio/Anacondaz.mp3';
 
+isPlay = false;
 
 audio.addEventListener("timeupdate", function () {
-    currentTime = audio.currentTime;
+    progress.onmousemove = function (event) {
+        progress.onclick = function () {
+            time = (event.clientX - 80) / 294 * duration
+            audio.currentTime = time
+            console.log(time)
+        }
+    }
     duration = audio.duration;
+    currentTime = audio.currentTime;
     range = (currentTime / duration) * 100
     progress.value = range
-    console.log(range)
+    console.log(currentTime)
 });
 
-progress.onmousemove = function (event) {
-    progress.onclick = function () {
-        console.log()
-        time = (event.clientX - 80)/294*duration
-    }
-}
+
 
 
 
 function playAudio() {
     if (isPlay === false) {
         isPlay = true
-        audio.src = 'assets/audio/Anacondaz.mp3';
         audio.currentTime = 0;
         player.classList.remove('play')
         player.classList.add('pause')
