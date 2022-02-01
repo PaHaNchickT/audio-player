@@ -1,5 +1,6 @@
 body{
     margin-left: 0;
+    /* background-color: black; */
 }
 
 .btn-play {
@@ -25,6 +26,7 @@ body{
     border: none;
     background: black;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .bar-progress {
@@ -36,4 +38,19 @@ body{
     position: relative;
     top: -5px;
     left: -5.5px;
+}
+
+.prev, .next {
+    width: 37px;
+    height: 37px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.prev {
+    background-image: url(assets/svg/backward.png);
+}
+
+.next {
+    background-image: url(assets/svg/forward.png);
 }

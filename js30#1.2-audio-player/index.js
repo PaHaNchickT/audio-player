@@ -7,22 +7,25 @@ let coordLeft
 let isPlay = false
 let range
 let currentTime
-let duration
+let duration = audio.duration
 let time = 0
 let Xcoor
+let min = 0
+let sec = 0
+let durmin = 0
+let dursec = 0
 
 audio.src = 'assets/audio/Anacondaz.mp3';
 
 for (let keys in coordPlayer) {
     coordLeft = coordPlayer['left']
 }
-
+//progression bar
 audio.addEventListener("timeupdate", function () {
     progress.onmousemove = function (event) {
         progress.onclick = function () {
             time = (event.clientX - coordLeft) / 294 * duration
             audio.currentTime = time
-            console.log(time/duration)
         }
     }
     if (isPlay === false) {
@@ -34,13 +37,32 @@ audio.addEventListener("timeupdate", function () {
     currentTime = audio.currentTime;
     range = (currentTime / duration) * 100
     progress.value = range
-    // console.log(currentTime)
+    //current time
+    sec = Math.trunc(currentTime)
+    if ((sec >= 0)&&(sec <= 9)) {
+        sec = `0${sec}`
+    }  
+    if (sec >= 60) {
+        min = Math.trunc(currentTime/60)
+        sec = Math.trunc(currentTime%60)
+        if ((sec >= 0)&&(sec <= 9)) {
+            sec = `0${sec}`
+        }     
+    }
+    document.querySelector('.current-time').textContent = `${min}:${sec}`
+    //duration time
+    dursec = Math.trunc(duration);
+    if (dursec >= 60) {
+        durmin = Math.trunc(duration/60)
+        dursec = Math.trunc(duration%60)
+        if ((sec >= 0)&&(sec <= 9)) {
+            sec = `0${sec}`
+        }  
+    }
+    document.querySelector('.duration-time').textContent = `${durmin}:${dursec}`
 });
 
-
-
-
-
+//play audio buttons
 function playAudio() {
     if (isPlay === false) {
         isPlay = true
@@ -59,4 +81,3 @@ function playAudio() {
 }
 
 player.addEventListener('click', playAudio);
-
