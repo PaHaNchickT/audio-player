@@ -1,0 +1,22 @@
+button {
+    border: none;
+    width: 69px;
+    height: 69px;
+    background-color: white;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.pause {
+    background-image: url('assets/svg/pause.png');
+}
+
+.play {
+    background-image: url('assets/svg/play.png');
+}
+
+.range {
+    width: 294px;
+    height: 7px;
+    border: none;
+}
