@@ -1,7 +1,6 @@
 const audio = new Audio();
 const player = document.querySelector('.btn-play')
-const controlProgress = document.querySelector('.progress');
-const progressBar = document.querySelector('.progress__filled');
+const bar = document.querySelector('.bar-progress')
 let isPlay = false
 
 const progress = document.querySelector('.range')
@@ -17,16 +16,17 @@ isPlay = false;
 audio.addEventListener("timeupdate", function () {
     progress.onmousemove = function (event) {
         progress.onclick = function () {
-            time = (event.clientX - 80) / 294 * duration
+            time = (event.clientX - 7) / 294 * duration
             audio.currentTime = time
-            console.log(time)
+            console.log(time/duration)
         }
     }
+    bar.style.left = `calc(${currentTime/duration*100}% - 5.5px)`
     duration = audio.duration;
     currentTime = audio.currentTime;
     range = (currentTime / duration) * 100
     progress.value = range
-    console.log(currentTime)
+    // console.log(currentTime)
 });
 
 
