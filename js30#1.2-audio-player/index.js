@@ -113,8 +113,7 @@ player.addEventListener('click', playAudio);
 //добавить сюда условия если isPlay равно или не равно
 
 function prevSong() {
-    // currentTime = 0
-    // range = 0
+    min = 0
     song = song - 1
     audio.src = `assets/audio/${song}.mp3`;
     audio.play();
@@ -126,8 +125,7 @@ function prevSong() {
 }
 
 function nextSong() {
-    // currentTime = 0
-    // range = 0
+    min = 0
     song = song + 1
     audio.src = `assets/audio/${song}.mp3`;
     audio.play();
