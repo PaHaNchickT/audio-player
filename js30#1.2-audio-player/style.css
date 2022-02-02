@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
 body{
-    margin-left: 0;
-    /* background-color: black; */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+button {
+    background: none;
 }
 
 .btn-play {
     border: none;
-    width: 69px;
-    height: 69px;
-    background-color: white;
+    width: 62px;
+    height: 62px;
+    /* background-color: none; */
     background-size: 100%;
     cursor: pointer;
 }
@@ -21,12 +29,14 @@ body{
 }
 
 .range {
-    width: 294px;
-    height: 7px;
+    /* width: 294px; */
+    width: 264px;
+    height: 5px;
     border: none;
     background: black;
     border-radius: 2px;
     cursor: pointer;
+    margin-top: 18px;
 }
 
 .bar-progress {
@@ -55,11 +65,74 @@ body{
     background-image: url(assets/svg/forward.png);
 }
 
+main {
+    width: 404px;
+}
+
 .cover {
-    /* width: 458px; */
-    width: 369px;
-    height: 369px;
+    width: 404px;
+    height: 404px;
     background-size: 100%;
-    background-position: center;
-    /* background-image: url(assets/img/Eyes.jpg); */
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.player {
+    height: 160px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: linear-gradient(45deg, #393939, #828282);
+}
+
+.interactive {
+    height: 93px;
+    padding: 11px 44px 5px 35px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1, h2, .duration-time, .current-time {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+    margin: 0
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+h1, .duration-time {
+    color: #c6f439;
+}
+
+h2 {
+    color: white;
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.current-time {
+    color: white;
+    margin-top: 5px;
+}
+
+.duration-time, .current-time {
+    font-size: 13px;
+}
+
+.duration-time {
+    float: right;
+    margin-top: -20px;
+}
+
+.bar {
+    padding: 0 70px 0;
+}
+
+footer {
+    background-color: black;
 }

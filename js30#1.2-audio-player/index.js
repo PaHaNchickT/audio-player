@@ -36,7 +36,7 @@ for (let keys in coordPlayer) {
 audio.addEventListener("timeupdate", function () {
     progress.onmousemove = function (event) {
         progress.onclick = function () {
-            time = (event.clientX - coordLeft) / 294 * duration
+            time = (event.clientX - coordLeft) / 244 * duration
             audio.currentTime = time
         }
     }
@@ -76,7 +76,6 @@ audio.addEventListener("timeupdate", function () {
     //info
     for (let keys in songlist) {
         info = songlist[song].split('=')
-        console.log(info)
     }
     document.querySelector('h1').textContent = info[0]
     document.querySelector('h2').textContent = info[1]
