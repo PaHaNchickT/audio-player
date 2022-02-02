@@ -19,7 +19,7 @@ let min = 0
 let sec = 0
 let durmin = 0
 let dursec = 0
-let song = 1
+let song = 0
 let songsNumber = 0
 let info
 
@@ -81,6 +81,12 @@ audio.addEventListener("timeupdate", function () {
     document.querySelector('h1').textContent = info[0]
     document.querySelector('h2').textContent = info[1]
     document.querySelector('.cover').style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
+
+    //what if song ended
+
+    if (currentTime === duration) {
+        nextSong()
+    }
 });
 //play audio buttons
 function playAudio() {
