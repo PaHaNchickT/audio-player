@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
 
-body{
+body {
     margin: 0;
+    height: 100vh;
+}
+
+.body{
     display: flex;
     justify-content: center;
     padding-top: 100px;
@@ -20,11 +24,11 @@ button {
     cursor: pointer;
 }
 
-.btn-play:hover, .next:hover, .prev:hover {
+.btn-play:hover, .next:hover, .prev:hover, a:hover {
     opacity: 0.6
 }
 
-.btn-play, .next, .prev {
+.btn-play, .next, .prev, a {
     transition: 0.3s;
 }
 
@@ -147,5 +151,31 @@ h2 {
 }
 
 footer {
+    font-family: 'Montserrat', sans-serif;
     background-color: black;
+    height: 30px;
+    margin-top: 99px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0;
+}
+
+.logo {
+    background-image: url(assets/svg/logo.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    filter: invert(100%);
+    width: 60px;
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
 }

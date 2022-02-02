@@ -41,7 +41,7 @@ audio.addEventListener("timeupdate", function () {
     } else {
         cover.style.backgroundSize = '100%'
     }
-    //progress bas
+    //progress bar
     const coordPlayer = player.getBoundingClientRect()
     for (let keys in coordPlayer) {
         coordLeft = coordPlayer['left'] + 35;
