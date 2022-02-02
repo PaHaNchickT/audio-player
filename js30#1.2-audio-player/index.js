@@ -27,16 +27,18 @@ for (let keys in songlist) {
     songsNumber = songsNumber + 1
 }
 
+console.log(coordPlayer)
+
 audio.src = `assets/audio/${song}.mp3`;
 
 for (let keys in coordPlayer) {
-    coordLeft = coordPlayer['left']
+    coordLeft = coordPlayer['left'] + 35
 }
 //progression bar
 audio.addEventListener("timeupdate", function () {
     progress.onmousemove = function (event) {
         progress.onclick = function () {
-            time = (event.clientX - coordLeft) / 244 * duration
+            time = (event.clientX - coordLeft) / 264 * duration
             audio.currentTime = time
         }
     }
