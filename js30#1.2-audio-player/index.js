@@ -133,6 +133,12 @@ function nextSong() {
     min = 0
     song = song + 1
     audio.src = `assets/audio/${song}.mp3`;
+    if (isPlay === false) {
+        audio.currentTime = 0
+        player.classList.remove('play')
+        player.classList.add('pause')
+        isPlay = true
+    }
     audio.play();
     audio.addEventListener('error', function () {
         song = 0
