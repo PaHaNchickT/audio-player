@@ -72,7 +72,7 @@ audio.addEventListener("timeupdate", function () {
         }
     }
     document.querySelector('.duration-time').textContent = `${durmin}:${dursec}`
-    
+
     //info
     for (let keys in songlist) {
         info = songlist[song].split('=')
@@ -113,15 +113,20 @@ player.addEventListener('click', playAudio);
 //добавить сюда условия если isPlay равно или не равно
 
 function prevSong() {
-    min = 0
-    song = song - 1
-    audio.src = `assets/audio/${song}.mp3`;
-    audio.play();
-    audio.addEventListener('error', function () {
-        song = songsNumber-1
+    if (sec > 1) {
+        audio.currentTime = 0
+        min = 0
+    } else {
+        min = 0
+        song = song - 1
         audio.src = `assets/audio/${song}.mp3`;
         audio.play();
-    }, false);
+        audio.addEventListener('error', function () {
+            song = songsNumber - 1
+            audio.src = `assets/audio/${song}.mp3`;
+            audio.play();
+        }, false);
+    }
 }
 
 function nextSong() {
