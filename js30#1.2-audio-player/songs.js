@@ -4,6 +4,8 @@ const songlist = {
     '2': 'Linkin park=Numb=Meteora',
     '3': 'Noize MC=Миокард=Exit',
     '4': 'Маяк=Динамит=Mayak',
-    '5': 'Nizkiz=Лiрика=Lirika'
+    '5': 'TV On The Radio=Happy Idiot=TV',
+    '6': 'Антон Токарев=Седьмой лепесток (live)=',
+    '7': 'Nizkiz=Лiрика=Lirika'
 }
 export default songlist;

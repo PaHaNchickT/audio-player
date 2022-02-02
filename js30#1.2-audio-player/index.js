@@ -6,6 +6,9 @@ const bar = document.querySelector('.bar-progress')
 const progress = document.querySelector('.range')
 const prev = document.querySelector('.prev')
 const next = document.querySelector('.next')
+const cover = document.querySelector('.cover')
+const h1 = document.querySelector('h1')
+const h2 = document.querySelector('h2')
 
 let coordLeft
 let isPlay = false
@@ -31,6 +34,14 @@ audio.src = `assets/audio/${song}.mp3`;
 
 //progression bar
 audio.addEventListener("timeupdate", function () {
+    //change style of cover
+
+    if (isPlay === true) {
+        cover.style.backgroundSize = '103%'
+    } else {
+        cover.style.backgroundSize = '100%'
+    }
+    //progress bas
     const coordPlayer = player.getBoundingClientRect()
     for (let keys in coordPlayer) {
         coordLeft = coordPlayer['left'] + 35;
@@ -78,16 +89,19 @@ audio.addEventListener("timeupdate", function () {
     for (let keys in songlist) {
         info = songlist[song].split('=')
     }
-    document.querySelector('h1').textContent = info[0]
-    document.querySelector('h2').textContent = info[1]
-    document.querySelector('.cover').style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
-
+    h1.textContent = info[0]
+    h2.textContent = info[1]
+    if (info[2] === '') {
+        cover.style.backgroundImage = `url(assets/img/default.jpg)`
+    } else {
+        cover.style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
+    }
     //what if song ended
-
     if (currentTime === duration) {
         nextSong()
     }
 });
+
 //play audio buttons
 function playAudio() {
     if (isPlay === false) {
@@ -108,10 +122,7 @@ function playAudio() {
 
 player.addEventListener('click', playAudio);
 
-//prev and next
-
-//добавить сюда условия если isPlay равно или не равно
-
+//prev function
 function prevSong() {
     if (sec > 1) {
         audio.currentTime = 0
@@ -139,7 +150,7 @@ function prevSong() {
         }, false);
     }
 }
-
+//next function
 function nextSong() {
     min = 0
     song = song + 1
@@ -160,3 +171,4 @@ function nextSong() {
 
 prev.addEventListener('click', prevSong);
 next.addEventListener('click', nextSong);
+
