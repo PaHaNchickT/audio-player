@@ -20,6 +20,14 @@ button {
     cursor: pointer;
 }
 
+.btn-play:hover, .next:hover, .prev:hover {
+    opacity: 0.7
+}
+
+.btn-play, .next, .prev {
+    transition: 0.3s;
+}
+
 .pause {
     background-image: url('assets/svg/pause.png');
 }
@@ -44,7 +52,6 @@ button {
     height: 15px;
     background: linear-gradient(180deg, #c6f439, white);
     border-radius: 7px;
-    /* border: 0.5px solid #3b4b1a; */
     position: relative;
     top: -5px;
     left: -5.5px;
