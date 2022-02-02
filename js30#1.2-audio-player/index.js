@@ -116,7 +116,18 @@ function prevSong() {
     if (sec > 1) {
         audio.currentTime = 0
         min = 0
+        if (isPlay === false) {
+            player.classList.remove('play')
+            player.classList.add('pause')
+            isPlay = true
+            audio.play();
+        }
     } else {
+        if (isPlay === false) {
+            player.classList.remove('play')
+            player.classList.add('pause')
+            isPlay = true
+        }
         min = 0
         song = song - 1
         audio.src = `assets/audio/${song}.mp3`;
