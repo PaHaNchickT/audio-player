@@ -4,7 +4,6 @@ const audio = new Audio();
 const player = document.querySelector('.btn-play')
 const bar = document.querySelector('.bar-progress')
 const progress = document.querySelector('.range')
-const coordPlayer = player.getBoundingClientRect()
 const prev = document.querySelector('.prev')
 const next = document.querySelector('.next')
 
@@ -27,15 +26,15 @@ for (let keys in songlist) {
     songsNumber = songsNumber + 1
 }
 
-console.log(coordPlayer)
-
 audio.src = `assets/audio/${song}.mp3`;
 
-for (let keys in coordPlayer) {
-    coordLeft = coordPlayer['left'] + 35;
-}
+
 //progression bar
 audio.addEventListener("timeupdate", function () {
+    const coordPlayer = player.getBoundingClientRect()
+    for (let keys in coordPlayer) {
+        coordLeft = coordPlayer['left'] + 35;
+    }
     progress.onmousemove = function (event) {
         progress.onclick = function () {
             time = (event.clientX - coordLeft) / 264 * duration
