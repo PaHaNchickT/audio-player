@@ -32,7 +32,7 @@ console.log(coordPlayer)
 audio.src = `assets/audio/${song}.mp3`;
 
 for (let keys in coordPlayer) {
-    coordLeft = coordPlayer['left'] + 35
+    coordLeft = coordPlayer['left'] + 35;
 }
 //progression bar
 audio.addEventListener("timeupdate", function () {

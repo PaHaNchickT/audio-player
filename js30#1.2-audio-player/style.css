@@ -42,9 +42,9 @@ button {
 .bar-progress {
     width: 10px;
     height: 15px;
-    background: linear-gradient(180deg, #ccec67, white);
+    background: linear-gradient(180deg, #c6f439, white);
     border-radius: 7px;
-    border: 0.5px solid #3b4b1a;
+    /* border: 0.5px solid #3b4b1a; */
     position: relative;
     top: -5px;
     left: -5.5px;
@@ -75,6 +75,7 @@ main {
     background-size: 100%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    background-image: url(assets/img/default.jpg);
 }
 
 .player {
