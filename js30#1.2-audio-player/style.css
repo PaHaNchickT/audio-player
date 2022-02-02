@@ -56,7 +56,8 @@ body{
 }
 
 .cover {
-    width: 458px;
+    /* width: 458px; */
+    width: 369px;
     height: 369px;
     background-size: 100%;
     background-position: center;
