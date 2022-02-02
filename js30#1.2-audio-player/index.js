@@ -9,6 +9,7 @@ const next = document.querySelector('.next')
 const cover = document.querySelector('.cover')
 const h1 = document.querySelector('h1')
 const h2 = document.querySelector('h2')
+const bg = document.querySelector('body')
 
 let coordLeft
 let isPlay = false
@@ -59,8 +60,7 @@ audio.addEventListener("timeupdate", function () {
     }
     duration = audio.duration;
     currentTime = audio.currentTime;
-    range = (currentTime / duration) * 100
-    progress.value = range
+
     //current time
     sec = Math.trunc(currentTime)
     if ((sec >= 0) && (sec <= 9)) {
@@ -93,8 +93,10 @@ audio.addEventListener("timeupdate", function () {
     h2.textContent = info[1]
     if (info[2] === '') {
         cover.style.backgroundImage = `url(assets/img/default.jpg)`
+        bg.style.backgroundImage = `url(assets/img/default.jpg)`
     } else {
         cover.style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
+        bg.style.backgroundImage = `url(assets/img/${info[2]}.jpg)`
     }
     //what if song ended
     if (currentTime === duration) {

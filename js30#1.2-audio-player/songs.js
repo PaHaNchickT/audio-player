@@ -5,7 +5,7 @@ const songlist = {
     '3': 'Noize MC=Миокард=Exit',
     '4': 'Маяк=Динамит=Mayak',
     '5': 'TV On The Radio=Happy Idiot=TV',
-    '6': 'Антон Токарев=Седьмой лепесток (live)=',
+    '6': 'Антон Токарев=Седьмой лепесток=',
     '7': 'Nizkiz=Лiрика=Lirika'
 }
 export default songlist;
