@@ -11,6 +11,7 @@ const h1 = document.querySelector('h1')
 const h2 = document.querySelector('h2')
 const bg = document.querySelector('body')
 
+let press = 0
 let coordLeft
 let isPlay = false
 let range
@@ -31,7 +32,6 @@ for (let keys in songlist) {
 }
 
 audio.src = `assets/audio/${song}.mp3`;
-
 
 //progression bar
 audio.addEventListener("timeupdate", function () {
@@ -60,6 +60,24 @@ audio.addEventListener("timeupdate", function () {
     }
     duration = audio.duration;
     currentTime = audio.currentTime;
+
+    //movig during pressing bar
+    // bar.onmousedown = function() {
+    //     press = 1;
+    //     console.log(press)
+    //     progress.onmousemove = function(event) {
+    //         // console.log((event.clientX - coordLeft)/264*100)
+    //         bar.style.left = `calc(${(event.clientX - coordLeft)/264*100}% - 5.5px)`
+    //         bar.onmouseup = function() {
+    //             press = 0;
+    //             time = (event.clientX - coordLeft) / 264 * duration
+    //             audio.play()
+    //             isPlay = true
+    //         }
+    //     }
+    // }
+    //не получилось, не фортануло
+    
 
     //current time
     sec = Math.trunc(currentTime)
